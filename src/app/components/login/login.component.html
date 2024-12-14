@@ -1,0 +1,36 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="mb-3">
+            <label for="userEmail" class="form-lable">Email</label>
+            <input type="email" id="userEmail" class="form-control" formControlName="userEmail">
+            @if(loginForm.controls["userEmail"]; as userEmail) {
+                @if(userEmail.touched && userEmail.invalid) {
+                    @if(userEmail.getError('required')) {
+                        <span class="text-danger">Debe ingresar un email</span>
+                    }
+                    @if (userEmail.getError('email')) {
+                        <span class="text-danger">Debe tener formato email</span>
+                    }
+                }
+            }
+        </div>
+        <div class="mb-3">
+            <label for="userPassword">Contraseña</label>
+            <input type="password" id="userPassword" class="form-control" formControlName="userPassword">
+            @if(loginForm.controls["userPassword"]; as userPassword) {
+                @if (userPassword.touched && userPassword.invalid) {
+                    @if (userPassword.getError('required')) {
+                        <span class="text-danger">Debe ingresar una contraseña</span>
+                    }
+                    @if (userPassword.getError('minlength')) {
+                        <span class="text-danger">Debe tener mínimo 10 caracteres </span>
+                    }
+                    @if (userPassword.getError('pattern')) {
+                        <span class="text-danger">Formato incorrecto, debe tener al menos 1 letra minuscula, 1 letra mayuscula y un caracter alfanumérico</span>
+                    }
+                }
+            }
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Ingresar</button>
+    </form>
+</div>
