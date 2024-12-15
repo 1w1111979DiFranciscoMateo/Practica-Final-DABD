@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+    <h2>Nuevo Modo</h2>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div class="card mb-3">
+            <div class="card-header">Información General</div>
+            <div class="card-body">
+                <!-- Campo Usuario -->
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Usuario</label>
+                    <span class="form-control" id="userName" readonly style="background-color:lightgray">{{ userLogeado?.email }}</span>
+                </div>
+                <!-- Campo Nombre -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre de Modo</label>
+                    <input type="text" id="name" class="form-control" formControlName="name">
+                    @if (form.controls["name"]; as name) {
+                        @if (name.touched && name.invalid) {
+                            @if (name.getError("required")) {
+                                <span class="text-danger">Nombre es requerido</span>
+                            }
+                            @if (name.getError("minlength")) {
+                                <span class="text-danger">Debe tener al menos 5 caracteres</span>
+                            }
+                            @if (name.getError("modeNameTaken")) {
+                                <span class="text-danger">Ya existe un modo con ese nombre creado por esta cuenta</span>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- FormArray -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                Zonas
+                <a (click)="onNewMode()" class="text-primary">+ Nueva Zona</a>
+            </div>
+            <!-- Comienza el FormArray -->
+            <div class="card-body" formArrayName="zones">
+                @for (item of zones.controls; track $index) {
+                    <div class="row mb-3" [formGroupName]="$index">
+                        <div class="col">
+                            <label for="zone" class="form-label">Zona #{{ $index + 1 }}</label>
+                            <select id="zone" class="form-select" formControlName="zone">
+                                @for (zone of zonesArray; track $index) {
+                                    <option [value]="zone.id">{{ zone.name }}</option>
+                                }
+                            </select>
+                            @if (item.get("zone")?.touched && item.get("zone")?.invalid) {
+                                <span class="text-danger">Debe seleccionar una zona</span>
+                            }
+                        </div>
+                        <div class="col-md-1 d-flex align-items-end">
+                            <button type="button" class="btn btn-dark" (click)="onDeleteZone($index)"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                }
+                <!-- Validator Zonas repetidas del FormArray -->
+                @if (zones.invalid && zones.hasError("uniqueZones")) {
+                    <span class="text-danger">No se pueden repetir las zonas</span>
+                }
+            </div>
+        </div>
+        <!--Boton Cancelar y Guardar-->
+        <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-secondary me-2" [routerLink]="['/panel']" routerLinkActive="active">Cancelar</button>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Crear Modo</button>
+        </div>
+    </form>
+</div>
