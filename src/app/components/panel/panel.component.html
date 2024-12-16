@@ -1,2 +1,23 @@
 <app-navbar></app-navbar>
-<p>panel works!</p>
+<div class="container mt-4">
+    <h2>Desde este panel puede manejar los modos de su alarma</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col mb-3">
+                <label for="alarmMode" class="form-label">Seleccionar Modo:</label>
+                <select id="alarmMode" class="form-select" formControlName="alarmMode">
+                    @for (mode of alarmModeArray; track $index) {
+                        <option [value]="mode.id">{{ mode.name }}</option>
+                    }
+                </select>
+            </div>
+            <div class="col mb-3">
+                @if (armada) {
+                    <button type="submit" class="btn btn-danger" [disabled]="form.invalid">Desarmar</button>
+                } @else {
+                    <button type="submit" class="btn btn-success" [disabled]="form.invalid">Armar</button>
+                }
+            </div>
+        </div>
+    </form>
+</div>

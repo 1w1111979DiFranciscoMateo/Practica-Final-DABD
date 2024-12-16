@@ -24,10 +24,8 @@ export class NewModeComponent implements OnInit, OnDestroy{
     this.userLogeado = this.loginService.user;
     this.form.patchValue({userId : this.userLogeado?.id});
 
-    
     //aca llamamos al metodo que va a cargar los selects del formarray de zonas
     this.loadZones();
-
   }
 
   ngOnDestroy(): void {
