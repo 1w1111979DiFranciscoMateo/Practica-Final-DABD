@@ -12,8 +12,8 @@ export class AppComponent implements OnInit{
   title = 'PracticaFinalDABD';
   
   ngOnInit(): void {
-    console.log("email: 404931@homesafe.io");
-    console.log("password: 404931_sAGRIPANTI!");
+    console.log("email: mateodifran@hotmail.com");
+    console.log("password: testContraseña123");
   }
   
 }

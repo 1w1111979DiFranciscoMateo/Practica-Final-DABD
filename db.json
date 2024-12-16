@@ -1,0 +1,192 @@
+{
+  "users": [
+    {
+      "email": "mateodifran@hotmail.com",
+      "password": "testContraseña123",
+      "id": "1"
+    }
+  ],
+  "zones": [
+    {
+      "name": "Livingroom",
+      "active": "test",
+      "id": "1"
+    },
+    {
+      "name": "Kitchen",
+      "active": "test 2",
+      "id": "2"
+    }
+  ],
+  "modes": [
+    {
+      "userId": "1",
+      "name": "Modo 1",
+      "zones": [
+        {
+          "name": "Livingroom",
+          "active": "test",
+          "id": "1"
+        }
+      ],
+      "creationDate": "2024-11-23T21:38:30.762Z",
+      "id": "1"
+    },
+    {
+      "userId": "1",
+      "name": "Modo 2",
+      "zones": [
+        {
+          "name": "Kitchen",
+          "active": "test 2",
+          "id": "2"
+        }
+      ],
+      "creationDate": "2024-11-23T21:38:30.762Z",
+      "id": "2"
+    },
+    {
+      "userId": "1",
+      "name": "Modo 3",
+      "zones": [
+        {
+          "zone": "1"
+        }
+      ],
+      "creationDate": "2024-12-16T07:23:17.217Z",
+      "id": "3"
+    },
+    {
+      "userId": "1",
+      "name": "Modo 4",
+      "zones": [
+        {
+          "zone": "2"
+        },
+        {
+          "zone": "1"
+        }
+      ],
+      "creationDate": "2024-12-16T07:24:51.470Z",
+      "id": "4"
+    },
+    {
+      "userId": "1",
+      "name": "Modo 5",
+      "zones": [
+        {
+          "zone": "2"
+        }
+      ],
+      "creationDate": "2024-12-16T08:37:30.401Z",
+      "id": "bZKEPKa"
+    }
+  ],
+  "status": [
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-11-23T21:38:30.762Z",
+      "modeId": "1",
+      "id": "1"
+    },
+    {
+      "activated": false,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:30:30.722Z",
+      "modeId": "1",
+      "id": "KVKJxQC"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:30:38.098Z",
+      "modeId": "1",
+      "id": "BW2AA3Q"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:30:44.747Z",
+      "modeId": "2",
+      "id": "T4PXIQc"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:30:49.418Z",
+      "modeId": "3",
+      "id": "RoyAefP"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:30:53.706Z",
+      "modeId": "4",
+      "id": "Pl4yx0H"
+    },
+    {
+      "activated": false,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:31:01.658Z",
+      "modeId": "2",
+      "id": "_RGz0e9"
+    },
+    {
+      "activated": false,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:31:18.298Z",
+      "modeId": "3",
+      "id": "zQRui7x"
+    },
+    {
+      "activated": false,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:31:25.737Z",
+      "modeId": "4",
+      "id": "XKFUBpH"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:31:41.442Z",
+      "modeId": "2",
+      "id": "-xdCwCm"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:31:44.282Z",
+      "modeId": "3",
+      "id": "pLHDzTW"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:31:46.737Z",
+      "modeId": "4",
+      "id": "hcRdF_-"
+    },
+    {
+      "activated": false,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:36:25.509Z",
+      "modeId": "1",
+      "id": "z9_tQRH"
+    },
+    {
+      "activated": true,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:37:40.356Z",
+      "modeId": "bZKEPKa",
+      "id": "R9iLmIm"
+    },
+    {
+      "activated": false,
+      "userId": "1",
+      "lastUpdateDate": "2024-12-16T08:38:17.851Z",
+      "modeId": "bZKEPKa",
+      "id": "maOLmPM"
+    }
+  ]
+}

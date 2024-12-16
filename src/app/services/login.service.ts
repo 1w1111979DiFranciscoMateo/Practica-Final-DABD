@@ -31,7 +31,7 @@ export class LoginService {
 
   //LLamada a la api para obtener todos los usuarios existentes
   getUsers() : Observable<User[]> {
-    return this.http.get<User[]>("https://6317ca93f6b281877c5d7785.mockapi.io/users");
+    return this.http.get<User[]>("http://localhost:3000/users");
   }
 
 }
