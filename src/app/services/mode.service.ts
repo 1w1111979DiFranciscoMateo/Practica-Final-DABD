@@ -11,6 +11,10 @@ import { Status } from '../models/status';
 export class ModeService {
   constructor() { }
 
+  //Para Inicializar el JSON Server. primero tiene que estar instalado en el proyecto
+  //(npm install json-server)(te fijas en el package.json en la parte de dependencias) 
+  //y despues para levantar el servidor tenes que ejecutar json-server --watch db.json 
+
   private readonly http : HttpClient = inject(HttpClient);
 
   //Metodo para obtener un array de todas las zonas en la api
